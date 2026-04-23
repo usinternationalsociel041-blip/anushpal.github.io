@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anush Pal — Digital Marketing Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f9f8f5;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --faint: #a0a0a0;
+    --border: rgba(0,0,0,0.10);
+    --border-strong: rgba(0,0,0,0.18);
+    --accent: #1a1a1a;
+    --accent-light: #f0ede6;
+    --green-bg: #eaf5ee;
+    --green-text: #1a5c30;
+    --blue-bg: #e8f0fb;
+    --blue-text: #1a3d7c;
+    --amber-bg: #fdf3e0;
+    --amber-text: #7a4a00;
+    --radius: 10px;
+    --radius-lg: 16px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 2.5rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    letter-spacing: -0.3px;
+  }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 9px 20px;
+    border-radius: var(--radius);
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* HERO */
+  .hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--green-bg);
+    color: var(--green-text);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 6vw, 52px);
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.25rem;
+    color: var(--text);
+  }
+  .hero h1 span { color: var(--muted); }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 500px;
+    margin: 0 auto 2.25rem;
+    line-height: 1.75;
+  }
+  .hero-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .btn-main {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 13px 28px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  .btn-main:hover { opacity: 0.85; }
+  .btn-sec {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border-strong);
+    padding: 13px 28px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-sec:hover { background: var(--accent-light); }
+
+  /* TRUST BAR */
+  .trust {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 1.5rem 2rem;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .trust-item { text-align: center; }
+  .trust-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .trust-lbl { font-size: 12px; color: var(--muted); }
+
+  /* SECTIONS */
+  .section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+  .sec-label {
+    font-size: 11px;
+    color: var(--faint);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  .sec-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.3px;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0 2rem;
+  }
+
+  /* SERVICES */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+    gap: 12px;
+  }
+  .svc-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    transition: border-color 0.2s;
+  }
+  .svc-card:hover { border-color: var(--border-strong); }
+  .svc-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .dot-blue { background: var(--blue-bg); color: var(--blue-text); }
+  .dot-green { background: var(--green-bg); color: var(--green-text); }
+  .dot-amber { background: var(--amber-bg); color: var(--amber-text); }
+  .svc-name { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+  .svc-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+  /* RESULTS */
+  .result-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 12px;
+    transition: border-color 0.2s;
+  }
+  .result-card:hover { border-color: var(--border-strong); }
+  .rc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .rc-title { font-size: 15px; font-weight: 500; }
+  .rc-tag {
+    font-size: 11px;
+    padding: 3px 12px;
+    border-radius: 50px;
+    font-weight: 500;
+  }
+  .tag-blue { background: var(--blue-bg); color: var(--blue-text); }
+  .tag-green { background: var(--green-bg); color: var(--green-text); }
+  .rc-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 1.25rem; }
+  .rc-nums { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .rn-val { font-size: 20px; font-weight: 500; font-family: 'DM Serif Display', serif; }
+  .rn-lbl { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* PROCESS */
+  .process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+  }
+  .proc-card {
+    background: var(--accent-light);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+  }
+  .proc-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--faint);
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+  .proc-title { font-size: 13px; font-weight: 500; margin-bottom: 5px; }
+  .proc-desc { font-size: 12px; color: var(--muted); line-height: 1.55; }
+
+  /* CONTACT */
+  .contact-wrap {
+    background: var(--accent);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .contact-wrap h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .contact-wrap p { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 2rem; line-height: 1.65; }
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 420px;
+    margin: 0 auto 1.25rem;
+  }
+  .form-row input,
+  .form-row textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius);
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-row input::placeholder,
+  .form-row textarea::placeholder { color: rgba(255,255,255,0.4); }
+  .form-row input:focus,
+  .form-row textarea:focus { border-color: rgba(255,255,255,0.5); }
+  .form-row textarea { height: 90px; resize: none; }
+  .submit-btn {
+    background: #fff;
+    color: var(--accent);
+    border: none;
+    padding: 13px 32px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .submit-btn:hover { opacity: 0.9; }
+
+  /* FOOTER */
+  footer {
+    padding: 1.75rem 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  footer p { font-size: 12px; color: var(--faint); }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero { animation: fadeUp 0.6s ease both; }
+  .trust { animation: fadeUp 0.6s 0.15s ease both; }
+
+  @media (max-width: 600px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links a { display: none; }
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .section { padding: 3rem 1.25rem; }
+    .divider { margin: 0 1.25rem; }
+    .trust { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Anush Pal</div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#results">Results</a>
+    <a href="#contact">Contact</a>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="badge">Digital Marketing Specialist &nbsp;·&nbsp; 3 Years Experience</div>
+  <h1>10,000 Leads.<br><span>₹1.3 Lakh Budget.</span><br>Real Results.</h1>
+  <p class="hero-sub">I help businesses grow through high-ROI Google & Meta Ads, powerful Social Media strategies, and Content Marketing that actually converts — not just gets clicks.</p>
+  <div class="hero-btns">
+    <button class="btn-main" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Free Strategy Call</button>
+    <button class="btn-sec" onclick="document.getElementById('results').scrollIntoView({behavior:'smooth'})">See My Work</button>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="trust-item"><div class="trust-num">10,000+</div><div class="trust-lbl">Leads generated</div></div>
+  <div class="trust-item"><div class="trust-num">₹1.3L</div><div class="trust-lbl">Budget managed</div></div>
+  <div class="trust-item"><div class="trust-num">3 Yrs</div><div class="trust-lbl">Experience</div></div>
+  <div class="trust-item"><div class="trust-num">₹13</div><div class="trust-lbl">Avg cost per lead</div></div>
+</div>
+
+<div class="section" id="services">
+  <div class="sec-label">What I do</div>
+  <div class="sec-title">Services</div>
+  <div class="services">
+    <div class="svc-card">
+      <div class="svc-dot dot-blue">GA</div>
+      <div class="svc-name">Google Ads</div>
+      <p class="svc-desc">Search, Display & Shopping campaigns optimized for maximum leads and lowest cost per acquisition.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-dot dot-blue">MA</div>
+      <div class="svc-name">Meta Ads</div>
+      <p class="svc-desc">Facebook & Instagram campaigns for lead gen, brand awareness, and e-commerce with sharp audience targeting.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-dot dot-green">SM</div>
+      <div class="svc-name">Social Media</div>
+      <p class="svc-desc">Content calendar, Reels strategy, community management and organic + paid growth across platforms.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-dot dot-amber">CM</div>
+      <div class="svc-name">Content Marketing</div>
+      <p class="svc-desc">SEO-driven blogs, video scripts, and lead magnets that attract the right audience and convert them.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section" id="results">
+  <div class="sec-label">Case studies</div>
+  <div class="sec-title">Results I've delivered</div>
+
+  <div class="result-card">
+    <div class="rc-header">
+      <div class="rc-title">Noor Collection — Clothing Brand</div>
+      <span class="rc-tag tag-blue">Instagram Growth</span>
+    </div>
+    <p class="rc-desc">Pakistani suits clothing brand from Calicut. Managed their Instagram page with consistent content, Reels strategy and audience targeting. Grew their followers massively from scratch.</p>
+    <div class="rc-nums">
+      <div><div class="rn-val">1,758</div><div class="rn-lbl">Before (followers)</div></div>
+      <div><div class="rn-val">42,500</div><div class="rn-lbl">After (followers)</div></div>
+      <div><div class="rn-val">24x</div><div class="rn-lbl">Growth achieved</div></div>
+    </div>
+  </div>
+
+  <div class="result-card">
+    <div class="rc-header">
+      <div class="rc-title">Monica Singh Ministries — Personal Brand</div>
+      <span class="rc-tag tag-green">Instagram Growth</span>
+    </div>
+    <p class="rc-desc">Built social media presence for a ministry & personal brand. Grew Instagram followers organically through consistent content strategy, YouTube integration and community engagement.</p>
+    <div class="rc-nums">
+      <div><div class="rn-val">459</div><div class="rn-lbl">Before (followers)</div></div>
+      <div><div class="rn-val">10,900</div><div class="rn-lbl">After (followers)</div></div>
+      <div><div class="rn-val">23x</div><div class="rn-lbl">Growth achieved</div></div>
+    </div>
+  </div>
+
+  <div class="result-card">
+    <div class="rc-header">
+      <div class="rc-title">US International Logistics — Cargo & Freight</div>
+      <span class="rc-tag tag-blue">Instagram Growth</span>
+    </div>
+    <p class="rc-desc">Delhi-based cargo & freight company specializing in China to India imports. Managed their social media and grew their online presence in a highly competitive B2B industry.</p>
+    <div class="rc-nums">
+      <div><div class="rn-val">327</div><div class="rn-lbl">Before (followers)</div></div>
+      <div><div class="rn-val">1,301</div><div class="rn-lbl">After (followers)</div></div>
+      <div><div class="rn-val">4x</div><div class="rn-lbl">Growth achieved</div></div>
+    </div>
+  </div>
+
+  <div class="result-card">
+    <div class="rc-header">
+      <div class="rc-title">Lead Gen Campaign — Meta Ads</div>
+      <span class="rc-tag tag-green">Meta Ads</span>
+    </div>
+    <p class="rc-desc">High-volume lead generation campaign on Facebook & Instagram. Used interest-based + lookalike audiences with creative A/B testing to bring cost per lead down to just ₹13.</p>
+    <div class="rc-nums">
+      <div><div class="rn-val">10,000+</div><div class="rn-lbl">Leads generated</div></div>
+      <div><div class="rn-val">₹1.3L</div><div class="rn-lbl">Budget managed</div></div>
+      <div><div class="rn-val">₹13</div><div class="rn-lbl">Cost per lead</div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+  <div class="sec-label">How I work</div>
+  <div class="sec-title">My process</div>
+  <div class="process">
+    <div class="proc-card">
+      <div class="proc-num">01</div>
+      <div class="proc-title">Discovery call</div>
+      <p class="proc-desc">Understand your business goals, target audience, and budget.</p>
+    </div>
+    <div class="proc-card">
+      <div class="proc-num">02</div>
+      <div class="proc-title">Strategy & plan</div>
+      <p class="proc-desc">Build a custom marketing plan tailored to your industry.</p>
+    </div>
+    <div class="proc-card">
+      <div class="proc-num">03</div>
+      <div class="proc-title">Launch & optimize</div>
+      <p class="proc-desc">Run campaigns, test creatives, optimize weekly for best results.</p>
+    </div>
+    <div class="proc-card">
+      <div class="proc-num">04</div>
+      <div class="proc-title">Report & scale</div>
+      <p class="proc-desc">Transparent reporting every week. Scale what works, cut what doesn't.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section" id="contact">
+  <div class="contact-wrap">
+    <h3>Let's grow your business together</h3>
+    <p>Fill in your details and I'll get back to you within 24 hours for a free strategy call. No commitment needed.</p>
+    <button class="submit-btn" onclick="window.open('https://wa.me/919315819468?text=Hi%20Anush%2C%20I\'m%20interested%20in%20your%20digital%20marketing%20services!', '_blank')">💬 Chat on WhatsApp — Free Strategy Call →</button>
+  </div>
+</div>
+
+<footer>
+  <p>
+    Anush Pal &nbsp;·&nbsp; Digital Marketing Specialist &nbsp;·&nbsp;
+    <!-- apna email yahan daalo -->
+    <a href="mailto:anushpal07@gmail.com">anushpal07@gmail.com</a> &nbsp;·&nbsp;
+    <a href="tel:+919315819468">+91 93158 19468</a>
+  </p>
+</footer>
+
+</body>
+</html>
